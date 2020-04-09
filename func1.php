@@ -1,6 +1,6 @@
 <html>
     <body>
-        <form action="/func1.html" onsubmit="return testForm()" method="post">
+        <form action="/func1.php" onsubmit="return testForm()" method="post">
             Student's ID: <input type="text" name="id" id="id"><br>
             Student's Name: <input type="text" name="name" id="name"><br>
             Student's Major: <input type="text" name="major" id="major"><br>
@@ -14,7 +14,7 @@
             return true;
         }
         function main() {
-            window.location.replace("/Users/rculb/Desktop/hw5/html/mainMenu.html");
+            window.location.replace("/mainMenu.html");
         }
     </script>
 </html>
