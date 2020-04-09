@@ -1,4 +1,5 @@
 <html>
+<!--Add a student to the Student table--> 
     <body>
         <form action="/func1.html" onsubmit="return testForm()" method="post">
             Student's ID: <input type="text" name="id" id="id"><br>
