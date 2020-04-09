@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <form action="/func3.html" onsubmit="return testForm()" method="GET">
+            Student ID: <input type="text" name="id" id="id"><br>
+            Department code: <input type="text" name="code" id="code"><br>
+            Course number: <input type="text" name="courseNumber" id="courseNumber"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button type="button" onclick=main()>Main Menu</button>
+        <p id="error"></p>
+    </body>
+    <script>
+        function testForm() {
+            return true;
+        }
+        function main() {
+            window.location.replace("/Users/rculb/Desktop/hw5/html/mainMenu.html");
+        }
+    </script>
+</html>
