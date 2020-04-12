@@ -20,3 +20,18 @@
         }
     </script>
 </html>
+<?php
+if (isset($_POST['submit']))
+{
+    $id = escapeshellarg($_POST[id]);
+    $code = escapeshellarg($_POST[code]);
+    $number = escapeshellarg($_POST[number]);
+
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $name . ' ' . $major;
+
+    $command = escapeshellcmd($command);
+    echo "<p>command: $command <p>";
+
+    system($command);   
+}
+?>
