@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
     $code = escapeshellarg($_POST[code]);
     $number = escapeshellarg($_POST[number]);
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $name . ' ' . $major;
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $code . ' ' . $number;
 
     $command = escapeshellcmd($command);
     echo "<p>command: $command <p>";
