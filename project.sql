@@ -5,7 +5,7 @@ CREATE TABLE Student (
 	PRIMARY KEY (StudentId)
 );
 CREATE TABLE Course (
-	DeptCode INT,
+	DeptCode CHAR(50),
 	CourseNum INT NOT NULL DEFAULT 0,
 	Title CHAR(50) NOT NULL DEFAULT '',
 	CreditHours INT NOT NULL DEFAULT 0
