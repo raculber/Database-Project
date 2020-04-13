@@ -1,4 +1,5 @@
 <html>
+<!--Add an application to the Enrollment table--> 
     <body>
         <form action="/func3.php" onsubmit="return testForm()" method="GET">
             Student ID: <input type="text" name="id" id="id"><br>

@@ -1,4 +1,5 @@
 <html>
+<!--Add a course to the Course table--> 
     <body>
         <form action="/func2.php" onsubmit="return testForm()" method="post">
             Department code: <input type="text" name="deptCode" id="deptCode"><br>
@@ -20,5 +21,18 @@
     </script>
 </html>
 <?php
+if (isset($_POST['submit']))
+{
+    $deptCode = escapeshellarg($_POST[deptCode]);
+    $courseNum = escapeshellarg($_POST[courseNum]);
+    $title = escapeshellarg($_POST[title]);
+    $creditHours = escapeshellarg($_POST[creditHours]);
 
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_course ' . $deptCode . ' ' . $courseNum . ' ' . $title . ' ' . $creditHours;
+
+    $command = escapeshellcmd($command);
+    echo "<p>command: $command <p>";
+
+    system($command);   
+}
 ?>

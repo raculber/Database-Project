@@ -1,4 +1,5 @@
 <html>
+<!--Add a student to the Student table--> 
     <body>
         <form action="/func1.php" onsubmit="return testForm()" method="post">
             Student's ID: <input type="text" name="id" id="id"><br>
@@ -14,7 +15,7 @@
             return true;
         }
         function main() {
-            window.location.replace("/mainMenu.html");
+            window.location.replace("/~raculber/mainMenu.html");
         }
     </script>
 </html>
