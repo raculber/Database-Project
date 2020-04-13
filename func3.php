@@ -21,9 +21,7 @@
     </script>
 </html>
 <?php
-<<<<<<< HEAD:func3.php
 
-=======
 if (isset($_POST['submit']))
 {
     $id = escapeshellarg($_POST[id]);
@@ -37,5 +35,4 @@ if (isset($_POST['submit']))
 
     system($command);   
 }
->>>>>>> f8180e22966435c94d6d8282aa02b302c097f2ea:html/func3.html
 ?>
