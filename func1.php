@@ -8,6 +8,7 @@
             <input name="submit" type="submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
+        <button type="button" onclick=main()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>

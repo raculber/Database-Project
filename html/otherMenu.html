@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <h3>Database Homework 5</h3>
+        <br>
+        <br>
+        <p>Choose one of the options below:</p>
+        <button type="button" id="addStudent" onclick=addStudent()>Option 1</button> Adding a student to the Student table<br>
+        <button type="button" id="addCourse" onclick=addCourse()>Option 2</button> Adding a course to the Course table<br>
+        <button type="button" id="addApplication" onclick=addApplication()>Option 3</button> Adding an application to the Enrollment table<br>
+        <button type="button" id="viewStudents" onclick=viewStudents()>Option 4</button> Viewing all students<br>
+        <button type="button" id="viewDept" onclick=viewDept()>Option 5</button> Viewing all courses from a given department<br>
+        <button type="button" id="viewCourses" onclick=viewCourses()>Option 6</button> Viewing all courses for a given student 
+
+
+    </body>
+</html>
+    <script>
+
+        // 1) add student to Student table
+        function addStudent(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func1.php");
+        }
+
+        // 2) add student to Course table
+        function addCourse(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func2.html");
+        }
+
+        // 3) add an application to Enrollment table
+        function addApplication(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func3.html");
+        }
+
+        // 4) View all students (display all attributes in the table for each student)
+        function viewStudents(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func4.html");
+        }
+
+        // 5) View all courses from a given department (display all attributes in the Course table for each course)
+        function viewDept(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func5.html");
+        }
+
+        // 6) View all courses for a given student (given the StudentID, display all attributes in the Course table for each course)
+        function viewCourses(){
+            window.location.replace("/Desktop/DatabaseHW5/Database-Project/html/func6.html");
+        }
+
+    </script>

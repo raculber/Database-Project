@@ -8,6 +8,7 @@
             <input type="submit" value="Submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
+        <button type="button" onclick=main()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>
@@ -20,5 +21,21 @@
     </script>
 </html>
 <?php
+<<<<<<< HEAD:func3.php
 
+=======
+if (isset($_POST['submit']))
+{
+    $id = escapeshellarg($_POST[id]);
+    $code = escapeshellarg($_POST[code]);
+    $number = escapeshellarg($_POST[number]);
+
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $code . ' ' . $number;
+
+    $command = escapeshellcmd($command);
+    echo "<p>command: $command <p>";
+
+    system($command);   
+}
+>>>>>>> f8180e22966435c94d6d8282aa02b302c097f2ea:html/func3.html
 ?>
