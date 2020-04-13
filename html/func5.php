@@ -14,6 +14,8 @@
 </body>
 </html>
 <?php
+include('php_db.php');
+
 if (isset($_POST['submit']))
 {
    echo ""  

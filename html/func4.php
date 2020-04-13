@@ -12,9 +12,14 @@
         <p id="error"></p>
 </body>
 <?php
+include('php_db.php');
+
 if (isset($_POST['submit']))
 {
-   echo ""  
+    echo '<br>Table Student<br>';
+    //SELECT all from Student Table
+    $Student = $myDb->query("SELECT * FROM Student");
+    $myDb->printTable($Student);  
 }
 ?>
 </html>
