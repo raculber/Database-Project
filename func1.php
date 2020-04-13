@@ -1,7 +1,7 @@
 <html>
 <!--Add a student to the Student table--> 
     <body>
-        <form action="/func1.php" onsubmit="return testForm()" method="post">
+        <form action="func1.php" method="post">
             Student's ID: <input type="text" name="id" id="id"><br>
             Student's Name: <input type="text" name="name" id="name"><br>
             Student's Major: <input type="text" name="major" id="major"><br>
@@ -12,26 +12,30 @@
         <p id="error"></p>
     </body>
     <script>
-        function testForm() {
-            return true;
-        }
         function main() {
-            window.location.replace("/~raculber/mainMenu.html");
+            window.location.replace("/mainMenu.html");
         }
     </script>
 </html>
 <?php
-if (isset($_POST['submit']))
-{
-    $id = escapeshellarg($_POST[id]);
-    $name = escapeshellarg($_POST[name]);
-    $major = escapeshellarg($_POST[major]);
+    include('php_db.php');
+    $id = $_POST[id];
+    $name = $_POST[name];
+    $major = $_POST[major];
+    if (isset($_POST['submit'])) {
+        $myDb = new php_db('raculber','aib2Oi5L','raculber');
+        $myDb->initDatabase();
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $name . ' ' . $major;
+        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); 
+        echo '<br>Table Student before:';
+        $myDb->printTable($Student);
 
-    $command = escapeshellcmd($command);
-    echo "<p>command: $command <p>";
+        $values = $id . ',\'' . $name . '\', \'' . $major . '\'';
+        $fields = '(StudentId, StudentName, Major)';
+        $myDb->insert('Student', $fields, $values);
 
-    system($command);   
-}
+        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); // select ALL from Restaurant
+        echo '<br>Table Student after:';
+        $myDb->printTable($Student);
+    }
 ?>

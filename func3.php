@@ -1,7 +1,7 @@
 <html>
 <!--Add an application to the Enrollment table--> 
     <body>
-        <form action="/func3.php" onsubmit="return testForm()" method="GET">
+        <form action="func3.php" method="post">
             Student ID: <input type="text" name="id" id="id"><br>
             Department code: <input type="text" name="code" id="code"><br>
             Course number: <input type="text" name="courseNumber" id="courseNumber"><br>
@@ -21,18 +21,22 @@
     </script>
 </html>
 <?php
+    include('php_db.php');
 
-if (isset($_POST['submit']))
-{
-    $id = escapeshellarg($_POST[id]);
-    $code = escapeshellarg($_POST[code]);
-    $number = escapeshellarg($_POST[number]);
+    $id = $_POST[id];
+    $code = $_POST[code];
+    $courseNumber = $_POST[courseNumber];
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_student ' . $id . ' ' . $code . ' ' . $number;
+    if (isset($_POST['submit'])) {
+        $myDb = new php_db('raculber','aib2Oi5L','raculber');
 
-    $command = escapeshellcmd($command);
-    echo "<p>command: $command <p>";
+        $myDb->initDatabase();
+        $Enrollment = $myDb->query('SELECT StudentId, DeptCode, CourseNum FROM Enrollment'); 
+        echo '<br>Table Enrollment before:';
+        $myDb->printTable($Enrollment);
 
-    system($command);   
-}
+        $values =  $id . ',\'' . $code . '\',' . $courseNumber;
+        $fields = '(StudentId, DeptCode, CourseNum)';
+        $myDb->insert('Enrollment', $fields, $values);
+    }
 ?>
