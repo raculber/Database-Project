@@ -1,7 +1,7 @@
 <html>
 <!--Add an application to the Enrollment table--> 
     <body>
-        <form action="/func3.html" onsubmit="return testForm()" method="GET">
+        <form action="/func3.php" onsubmit="return testForm()" method="GET">
             Student ID: <input type="text" name="id" id="id"><br>
             Department code: <input type="text" name="code" id="code"><br>
             Course number: <input type="text" name="courseNumber" id="courseNumber"><br>

@@ -1,7 +1,7 @@
 <html>
 <!--Add a course to the Course table--> 
     <body>
-        <form action="/func2.html" onsubmit="return testForm()" method="GET">
+        <form action="/func2.php" onsubmit="return testForm()" method="GET">
             Department code: <input type="text" name="deptCode" id="deptCode"><br>
             Course number: <input type="text" name="courseNum" id="courseNum"><br>
             Title: <input type="text" name ="title" id="title"><br>
