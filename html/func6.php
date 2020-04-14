@@ -14,13 +14,14 @@
      function main() {
         window.location.replace("/~raculber/mainMenu.html");
     }
+</script>
 </html>
 <?php
 include('php_db.php');
 
 if (isset($_POST['submit']))
 {
-    echo '<br>Table Student<br>';
+    echo '<br>Viewing all courses for given student<br>';
     //SELECT all from Student Table
     $Student = $myDb->query("SELECT * FROM Student");
     $myDb->printTable($Student);  

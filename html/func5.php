@@ -14,6 +14,7 @@
      function main() {
         window.location.replace("/~raculber/mainMenu.html");
     }
+</script>
 </html>
 <?php
 include('php_db.php');
