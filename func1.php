@@ -33,7 +33,7 @@
         $fields = '(StudentId, StudentName, Major)';
         $myDb->insert('Student', $fields, $values);
 
-        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); // select ALL from Restaurant
+        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student');
         echo '<br>Table Student after:';
         $myDb->printTable($Student);
     }
