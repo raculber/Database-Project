@@ -20,7 +20,7 @@ include('php_db.php');
 if (isset($_POST['submit']))
 {
     //SELECT all from Student Table
-    echo '<br>Table Student<br>';
+    echo '<br>Viewing all students<br>';
     $Student = $myDb->query('SELECT * FROM Student');
     $myDb->printTable($Student);  
 }
