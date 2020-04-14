@@ -19,9 +19,9 @@ include('php_db.php');
 
 if (isset($_POST['submit']))
 {
-    echo '<br>Table Student<br>';
     //SELECT all from Student Table
-    $Student = $myDb->query("SELECT * FROM Student");
+    $Student = $myDb->query('SELECT * FROM Student');
+    echo '<br>Table Student<br>';
     $myDb->printTable($Student);  
 }
 ?>
