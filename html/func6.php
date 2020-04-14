@@ -7,7 +7,13 @@
         Student ID: <input type="text" name="studentid" id="studentid"><br>
         <input name="submit" type="submit" value="View courses for student">
         <p id="error"></p>
+        <button type="button" onclick=main()>Main Menu</button>
+        <p id="error"></p>
 </body>
+<script>
+     function main() {
+        window.location.replace("/~raculber/mainMenu.html");
+    }
 </html>
 <?php
 include('php_db.php');
