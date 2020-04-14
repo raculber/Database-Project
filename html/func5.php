@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
 {
     echo '<br>Courses from given department<br>';
     //SELECT all from given department
-    $DeptCode = $myDb->query("SELECT * FROM Student");
+    $DeptCode = $myDb->query("SELECT * FROM Course");
     $myDb->printTable($Student);  
 }
 ?>

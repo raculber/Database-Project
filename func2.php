@@ -9,7 +9,7 @@
             <input type="submit" value="Submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
-        <button type="button" onclick=main()>Other Menu</button>
+        <button type="button" onclick=main2()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>
@@ -18,6 +18,9 @@
         }
         function main() {
             window.location.replace("/mainMenu.html");
+        }
+        function main2() {
+            window.location.replace("/otherMenu.html");
         }
     </script>
 </html>
