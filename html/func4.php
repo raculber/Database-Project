@@ -6,15 +6,22 @@
     <p>Click button below to view all students</p>
     <input name="submit" type="submit" value="View Students">
     </form>
+    <button type="button" onclick=main()>Main Menu</button>
+    <p id="error"></p>
 </body>
+<script>
+     function main() {
+        window.location.replace("/~raculber/mainMenu.html");
+    }
+</script>
 <?php
 include('php_db.php');
 
 if (isset($_POST['submit']))
 {
-    echo '<br>Table Student<br>';
     //SELECT all from Student Table
-    $Student = $myDb->query("SELECT * FROM Student");
+    $Student = $myDb->query('SELECT * FROM Student');
+    echo '<br>Table Student<br>';
     $myDb->printTable($Student);  
 }
 ?>
