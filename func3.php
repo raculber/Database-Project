@@ -5,10 +5,9 @@
             Student ID: <input type="text" name="id" id="id"><br>
             Department code: <input type="text" name="code" id="code"><br>
             Course number: <input type="text" name="courseNumber" id="courseNumber"><br>
-            <input type="submit" value="Submit">
+            <input name="submit" type="submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
-        <button type="button" onclick=main()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>
@@ -16,7 +15,7 @@
             return true;
         }
         function main() {
-            window.location.replace("/mainMenu.html");
+            window.location.replace("/~raculber/mainMenu.html");
         }
     </script>
 </html>
@@ -38,5 +37,9 @@
         $values =  $id . ',\'' . $code . '\',' . $courseNumber;
         $fields = '(StudentId, DeptCode, CourseNum)';
         $myDb->insert('Enrollment', $fields, $values);
+
+        $Enrollment = $myDb->query('SELECT StudentId, DeptCode, CourseNum FROM Enrollment'); 
+        echo '<br>Table Enrollment after:';
+        $myDb->printTable($Enrollment);
     }
 ?>

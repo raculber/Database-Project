@@ -8,12 +8,11 @@
             <input name="submit" type="submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
-        <button type="button" onclick=main()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>
         function main() {
-            window.location.replace("/mainMenu.html");
+            window.location.replace("/~raculber/mainMenu.html");
         }
     </script>
 </html>

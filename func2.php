@@ -6,10 +6,9 @@
             Course number: <input type="text" name="courseNum" id="courseNum"><br>
             Title: <input type="text" name ="title" id="title"><br>
             Credit hours: <input type="text" name="creditHours" id="creditHours"><br>
-            <input type="submit" value="Submit">
+            <input name="submit" type="submit">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
-        <button type="button" onclick=main()>Other Menu</button>
         <p id="error"></p>
     </body>
     <script>
@@ -17,7 +16,7 @@
             return true;
         }
         function main() {
-            window.location.replace("/mainMenu.html");
+            window.location.replace("/~raculber/mainMenu.html");
         }
     </script>
 </html>
@@ -38,9 +37,13 @@
         echo '<br>Table Course before:';
         $myDb->printTable($Course);
 
-        $values = '\'' . $deptCode . '\',' . $courseNum . ', \''. $title . '\',' . creditHours;
+        $values = '\'' . $deptCode . '\',' . $courseNum . ', \''. $title . '\',' . $creditHours;
         $fields = '(DeptCode, CourseNum, Title, CreditHours)';
-        $myDb->insert('Restaurant', $fields, $values);
+        $myDb->insert('Course', $fields, $values);
+
+        $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
+        echo '<br>Table Course after:';
+        $myDb->printTable($Course);
 
     }
 
