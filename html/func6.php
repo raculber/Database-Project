@@ -24,7 +24,7 @@ function StudForm()
 }
 if (isset($_POST['submit']))
 {
-   DeptForm();
+   StudForm();
    $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
    $myDb->printTable($Course);
 }
