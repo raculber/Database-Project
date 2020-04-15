@@ -22,7 +22,7 @@
 if (isset($_POST['submit']))
 {
    $myDb = new php_db('raculber','aib2Oi5L','raculber');
-   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course WHERE DeptCode =' . $_POST[deptCode]); 
+   $Course = $myDb->query('SELECT * FROM Course WHERE DeptCode = \''. $_POST[deptCode] . '\' '); 
    echo '<br>Viewing all courses for: '. $_POST[deptCode];
    $myDb->printTable($Course);
 }
