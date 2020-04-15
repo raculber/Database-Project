@@ -25,6 +25,10 @@ function DeptForm()
 if (isset($_POST['submit']))
 {
    DeptForm();
+   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
+   echo '<br>Table Course after:';
+   $myDb->printTable($Course);
+}
 
 }
 ?>
