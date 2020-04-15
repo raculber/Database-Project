@@ -31,8 +31,6 @@
     if (isset($_POST['submit'])) {
         $myDb = new php_db('raculber','aib2Oi5L','raculber');
 
-        $myDb->initDatabase();
-
         $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
         echo '<br>Table Course before:';
         $myDb->printTable($Course);

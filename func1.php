@@ -23,7 +23,6 @@
     $major = $_POST[major];
     if (isset($_POST['submit'])) {
         $myDb = new php_db('raculber','aib2Oi5L','raculber');
-        $myDb->initDatabase();
 
         $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); 
         echo '<br>Table Student before:';
@@ -33,7 +32,7 @@
         $fields = '(StudentId, StudentName, Major)';
         $myDb->insert('Student', $fields, $values);
 
-        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); // select ALL from Restaurant
+        $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student');
         echo '<br>Table Student after:';
         $myDb->printTable($Student);
     }

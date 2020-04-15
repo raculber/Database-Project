@@ -29,7 +29,6 @@
     if (isset($_POST['submit'])) {
         $myDb = new php_db('raculber','aib2Oi5L','raculber');
 
-        $myDb->initDatabase();
         $Enrollment = $myDb->query('SELECT StudentId, DeptCode, CourseNum FROM Enrollment'); 
         echo '<br>Table Enrollment before:';
         $myDb->printTable($Enrollment);
