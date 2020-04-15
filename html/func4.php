@@ -4,7 +4,7 @@
     <h3>Option 4 selected</h3><br>
     <form action="func4.php" method="post">
     <p>Click button below to view all students</p>
-    <input name="submit" type="submit4" value="View Students">
+    <input name="submit" type="submit" value="View Students">
     </form>
     <button type="button" onclick=main()>Main Menu</button>
     <p id="error"></p>
@@ -17,12 +17,16 @@
 </html>
 <?php
 include('php_db.php');
-
-if (isset($_POST['submit4']))
+    $id = $_POST[id];
+    $name = $_POST[name];
+    $major = $_POST[major];
+if (isset($_POST['submit']))
 {
+    $myDb = new php_db('raculber','aib2Oi5L','raculber');
+
     //SELECT all from Student Table
-    echo '<br>Viewing all students<br>';
-    $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); 
+    $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student');
+    echo '<br>Viewing all students<br>'; 
     $myDb->printTable($Student);
 }
 ?>
