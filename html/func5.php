@@ -4,7 +4,7 @@
         <h3>Option 5 selected</h3><br>
         <form action="func5.php" method="post">
         <p>Enter department code below to view all courses in specific department</p>
-        Department code: <input type="text" name="DeptCode" id="DeptCode"><br>
+        Department code: <input type="text" name="deptCode" id="deptCode"><br>
         <input name="submit" type="submit" value="View courses for department">
         </form>
         <button type="button" onclick=main()>Main Menu</button>
@@ -17,15 +17,13 @@
 </script>
 </html>
 <?php
-include('php_db.php');
-function DeptForm()
-{
-        echo "<h2>Department Code: " . $_POST[DeptCode] . "</h2></br>";
-}
+  include('php_db.php');
+  $deptCode = $_POST[deptCode];
 if (isset($_POST['submit']))
 {
-   DeptForm();
-   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
+   $myDb = new php_db('raculber','aib2Oi5L','raculber');
+   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course WHERE DeptCode =' . $_POST[deptCode]); 
+   echo '<br>Viewing all courses for: '. $_POST[deptCode];
    $myDb->printTable($Course);
 }
 ?>

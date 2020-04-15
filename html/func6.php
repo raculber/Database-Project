@@ -4,7 +4,7 @@
         <h3>Option 6 selected</h3><br>
         <form action="func6.php" method="post">
         <p>Enter Student ID below to view all courses for specific student</p>
-        Student ID: <input type="text" name="studentid" id="studentid"><br>
+        Student ID: <input type="text" name="studentId" id="studentId"><br>
         <input name="submit" type="submit" value="View courses for student">
         <p id="error"></p>
         <button type="button" onclick=main()>Main Menu</button>
@@ -17,15 +17,13 @@
 </script>
 </html>
 <?php
-include('php_db.php');
-function StudForm()
-{
-        echo "<h2>StudentID: " . $_POST[studentid] . "</h2></br>";
-}
+   include('php_db.php');
+   $studentId = $_POST[studentId];
 if (isset($_POST['submit']))
 {
-   StudForm();
-   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
-   $myDb->printTable($Course);
+   $myDb = new php_db('raculber','aib2Oi5L','raculber');
+   $Enrollment = $myDb->query('SELECT StudentId, DeptCode, CourseNum FROM Enrollment WHERE StudentId =' . $_POST[studentId]);  
+   echo '<br>Viewing all courses for: '. $_POST[studentId];
+   $myDb->printTable($Enrollment);
 }
 ?>
