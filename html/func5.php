@@ -29,6 +29,4 @@ if (isset($_POST['submit']))
    echo '<br>Table Course after:';
    $myDb->printTable($Course);
 }
-
-}
 ?>

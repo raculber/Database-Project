@@ -14,6 +14,7 @@
         window.location.replace("/~raculber/mainMenu.html");
     }
 </script>
+</html>
 <?php
 include('php_db.php');
 
@@ -21,9 +22,7 @@ if (isset($_POST['submit4']))
 {
     //SELECT all from Student Table
     echo '<br>Viewing all students<br>';
-    $fields = '(StudentId, StudentName, Major)';
-    $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student')
-    $myDb->printTable($Student);  
+    $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); 
+    $myDb->printTable($Student);
 }
 ?>
-</html>
