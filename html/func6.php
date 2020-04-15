@@ -18,12 +18,14 @@
 </html>
 <?php
 include('php_db.php');
-
+function StudForm()
+{
+        echo "<h2>StudentID: " . $_POST[studentid] . "</h2></br>";
+}
 if (isset($_POST['submit']))
 {
-    echo '<br>Viewing all courses for given student<br>';
-    //SELECT all from Student Table
-    $Student = $myDb->query("SELECT * FROM Student");
-    $myDb->printTable($Student);  
+   DeptForm();
+   $Course = $myDb->query('SELECT DeptCode, CourseNum, Title, CreditHours FROM Course'); 
+   $myDb->printTable($Course);
 }
 ?>
