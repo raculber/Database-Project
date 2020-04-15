@@ -23,7 +23,6 @@
     $major = $_POST[major];
     if (isset($_POST['submit'])) {
         $myDb = new php_db('raculber','aib2Oi5L','raculber');
-        $myDb->initDatabase();
 
         $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student'); 
         echo '<br>Table Student before:';
