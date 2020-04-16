@@ -23,7 +23,7 @@ include('php_db.php');
 if (isset($_POST['submit']))
 {
     $myDb = new php_db('raculber','aib2Oi5L','raculber');
-
+ 
     //SELECT all from Student Table
     $Student = $myDb->query('SELECT StudentId, StudentName, Major FROM Student');
     echo '<br>Viewing all students<br>'; 

@@ -20,7 +20,7 @@
   include('php_db.php');
   $deptCode = $_POST[deptCode];
 if (isset($_POST['submit']))
-{
+{ 
    $myDb = new php_db('raculber','aib2Oi5L','raculber');
    $Course = $myDb->query('SELECT * FROM Course WHERE DeptCode = \''. $_POST[deptCode] . '\' '); 
    echo '<br>Viewing all courses for: '. $_POST[deptCode];

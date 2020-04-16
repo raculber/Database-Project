@@ -25,5 +25,5 @@ if (isset($_POST['submit']))
    $Enrollment = $myDb->query('SELECT * FROM Enrollment WHERE StudentId =' . $_POST[studentId]);  
    echo '<br>Viewing all courses for: '. $_POST[studentId];
    $myDb->printTable($Enrollment);
-}
+} 
 ?>
