@@ -12,8 +12,7 @@
     </body>
     <script>
         function testForm() {
-            if (document.getElementById("id").value < 0 || 
-            typeof (document.getElementById("id").value) == 'string') {
+            if (document.getElementById("id").value < 0) {
                 document.getElementById("error").innerHTML = "Error: Invalid ID"; 
                 return false;
             }
