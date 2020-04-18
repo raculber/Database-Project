@@ -1,7 +1,7 @@
 <html>
 <!--Add an application to the Enrollment table--> 
     <body>
-        <form action="func3.php" method="post">
+        <form action="func3.php" onsubmit="return testForm()" method="post">
             Student ID: <input type="text" name="id" id="id"><br>
             Department code: <input type="text" name="code" id="code"><br>
             Course number: <input type="text" name="courseNumber" id="courseNumber"><br>
@@ -12,6 +12,19 @@
     </body>
     <script>
         function testForm() {
+            if (document.getElementById("id").value < 0 || 
+            typeof (document.getElementById("id").value) == 'string') {
+                document.getElementById("error").innerHTML = "Error: Invalid ID"; 
+                return false;
+            }
+            else if (document.getElementById("code").value.length > 50) {
+                document.getElementById("error").innerHTML = "Error: Invalid Department Code";
+                return false;
+            }
+            else if (document.getElementById("courseNumber").value < 0) {
+                document.getElementById("error").innerHTML = "Error: Invalid Course Number";
+                return false;
+            }
             return true;
         }
         function main() {
