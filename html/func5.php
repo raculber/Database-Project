@@ -15,7 +15,7 @@
         window.location.replace("/~raculber/mainMenu.html");
     }
     function testForm() {
-            else if (document.getElementById("deptCode").value.length > 50) {
+            if (document.getElementById("deptCode").value.length > 50) {
                 document.getElementById("error").innerHTML = "Error: Invalid Department code";
                 return false;
             } 
