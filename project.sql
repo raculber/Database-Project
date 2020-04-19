@@ -9,7 +9,7 @@ CREATE TABLE Course (
 	CourseNum INT NOT NULL DEFAULT 0,
 	Title CHAR(50) NOT NULL DEFAULT '',
 	CreditHours INT NOT NULL DEFAULT 0,
-	PRIMARY KEY (DeptCode, CourseNum)
+	PRIMARY KEY (Title)
 );
 CREATE TABLE Enrollment (
 	StudentId INT,
